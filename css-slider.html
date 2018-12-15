@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CSS-slider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <script src="main.js"></script>
+</head>
+<style>
+  body {
+    background: url(slider/old_wall.jpg);
+  }
+  h1 {
+    color:  rgba(130,195,217,0.9);
+    width: 600px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+    top: 150px; 
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    user-select: none;
+    text-shadow: 10px 10px 10px;
+  }
+  .container {
+    width: 600px;
+    height: 400px;
+    position: relative;
+    margin: auto;
+    margin-top: 200px;
+    border: 20px solid #fff;
+    box-shadow: 24px 24px 42px;
+  }
+  .img-1,.img-2,.img-3,.img-4 {
+    width: 150px;
+    height: 400px;
+    float: left;
+    position: relative;
+    overflow: hidden; 
+    box-sizing: border-box;
+  }
+  .img-1::after,.img-2::after,.img-3::after,.img-4::after {
+    content: "";
+    width: 1px;
+    height: 200px;
+    background: linear-gradient( rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%);
+    height: 100%;
+    display: block;
+    z-index: 99999;
+    position: absolute;
+  }
+  .move div{
+    position: absolute;
+    display: block;
+    z-index: 2;
+    transition: 1s;
+    width: 150px;
+    height: 400px;
+    left: -150px;
+    overflow: hidden;
+  }
+  img {
+    position: relative;
+  }
+  input {
+    display: none;
+  }
+  .img-1 div img {
+    
+    left: 0px;
+  }
+  
+  .img-2 div img {
+    left: -150px;
+  }
+
+  .img-3 div img {
+    left: -300px;
+  }
+  
+  .img-4 div img{
+    left: -450px;
+  }
+  input:checked ~ .move div {
+    animation: bye 1s linear;
+  }
+  @keyframes bye {
+    0%{
+      left: 0px;
+    }
+    100% {
+      left: 150px;
+    }
+  }
+
+  label {
+    display: block;
+    width: 26px;
+    height: 26px;
+    position: absolute;
+    bottom: 20px;
+    left: 60px;
+    border-radius: 50%;
+    background: rgba(130,195,217,0.9);
+    z-index: 999;
+    font-style: italic;
+    cursor: pointer;
+    color: #f9f9f9;
+    line-height: 26px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    border: 2px #f9f9f9 solid;
+  }
+  label span {
+    display: inline-block;
+    position: relative;
+    left: -2px;
+    user-select: none;
+  }
+  label + label {
+    left: 210px;
+  }
+  label + label + label {
+    left: 360px;
+  }
+  label + label + label + label {
+    left: 510px;
+  }
+  input:nth-child(1):checked ~ div.move div:nth-child(1),
+  input:nth-child(2):checked ~ div.move div:nth-child(2),
+  input:nth-child(3):checked ~ div.move div:nth-child(3),
+  input:nth-child(4):checked ~ div.move div:nth-child(4) {
+    left: 0px;
+    z-index: 8;
+    animation: none;
+    transition: left 1s linear;
+  }
+
+  input:nth-child(1):checked + input + input +input + label,
+  input:nth-child(2):checked + input + input + label + label,
+  input:nth-child(3):checked + input + label + label + label,
+  input:nth-child(4):checked + label + label + label + label {
+    background: #f9f9f9;
+    color: rgba(130,195,217,0.9);
+    border-color: rgba(130,195,217,0.9);
+  }
+  input:nth-child(1):checked ~ h3:first-of-type,
+  input:nth-child(2):checked ~ h3:nth-of-type(2),
+  input:nth-child(3):checked ~ h3:nth-of-type(3),
+  input:nth-child(4):checked ~ h3:nth-of-type(4) {
+    opacity: 1;
+    z-index: 99999999;
+  }
+  h3 {
+    position: absolute;
+    bottom: 80px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9999;
+    height: 62px;
+    text-align: center;
+    font-size: 48px;
+    color: #f9f9f9;
+    opacity: 0;
+    transition: opacity 1s;
+    letter-spacing: 6px;
+    user-select: none;
+  }
+</style>
+<body>
+  <h1>Sliding Image Panels with CSS</h1>
+  <div class="container">
+    <input type="radio" name="slider" id="s1" checked>
+    <input type="radio" name="slider" id="s2">
+    <input type="radio" name="slider" id="s3">
+    <input type="radio" name="slider" id="s4">
+    <label for="s1"><span>1</span></label>
+    <label for="s2"><span>2</span></label>
+    <label for="s3"><span>3</span></label>
+    <label for="s4"><span>4</span></label>
+    <div class="img-1 move">
+      <div>
+        <img src="slider/1.jpg" alt="">
+      </div>
+      <div>
+        <img src="slider/2.jpg" alt="">
+      </div>
+      <div>
+        <img src="slider/3.jpg" alt="">
+      </div>
+      <div>
+      <img src="slider/4.jpg" alt="">
+      </div>
+    </div>
+    <div class="img-2 move">
+      <div>
+        <img src="slider/1.jpg" alt="">
+      </div>
+      <div>
+        <img src="slider/2.jpg" alt="">
+      </div>
+      <div>
+        <img src="slider/3.jpg" alt="">
+      </div>
+      <div>
+        <img src="slider/4.jpg" alt="">
+      </div>
+    </div>
+    <div class="img-3 move">
+        <div>
+          <img src="slider/1.jpg" alt="">
+        </div>
+        <div>
+          <img src="slider/2.jpg" alt="">
+        </div>
+        <div>
+          <img src="slider/3.jpg" alt="">
+        </div>
+        <div>
+          <img src="slider/4.jpg" alt="">
+        </div>
+    </div>
+    <div class="img-4 move">
+      <div>
+        <img src="slider/1.jpg" alt="">
+      </div>
+      <div>
+        <img src="slider/2.jpg" alt="">
+      </div>
+      <div>
+        <img src="slider/3.jpg" alt="">
+      </div>
+      <div>
+      <img src="slider/4.jpg" alt="">
+      </div>
+    </div>
+    <h3>SERRNDIPITY</h3>
+    <h3>ADVENTURE</h3>
+    <h3>NATURE</h3>
+    <h3>SERENITY</h3>
+    </div>  
+</body>
+</html>

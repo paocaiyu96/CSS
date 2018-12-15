@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>css-clock</title>
+  <style>
+		body {
+			background: url(slider/white_texture.png);
+		}
+    .container {
+	margin-top: 200px;
+	
+}
+.round {
+	height: 550px;
+	width: 550px;
+	position: relative;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: 14px 20px 38px;
+  background: url(slider/noisy_blue.jpg);
+}
+.round span {
+	display: inline-block;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	font-size: 42px;
+	text-align: center;
+	/* background: grey; */
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	user-select: none;
+	text-shadow: 5px 5px 22px;
+}
+.second {
+	height: 220px;
+	width: 4px;
+	background: red;
+	position: absolute;
+	left: 50%;
+	bottom: 50%;
+	z-index: 99;
+	margin-left: -2px;
+	animation: rotates 60s infinite steps(60);
+	transform-origin: bottom center;
+}
+.minute {
+	height: 180px;
+	width: 6px;
+	background: black;
+	left: 50%;
+	bottom: 50%;
+	position: absolute;
+	margin-left: -3px;
+	transform-origin: bottom center;
+ animation: rotates 3600s infinite steps(60);
+}
+.hour {
+	height: 160px;
+	width: 10px;
+	background: black;
+	left: 50%;
+	bottom: 50%;
+	margin-left: -5px;
+	position: absolute;
+	transform-origin: bottom center;
+	animation: rotates 216000s infinite linear;
+}
+.bom {
+	width: 12px;
+	height: 12px;
+	border: 4px solid black;
+	border-radius: 50%;
+	background: red;
+	position: absolute;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	z-index: 999;
+	box-shadow: 5px 5px 15px;
+}
+ @keyframes rotates{
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+span:nth-child(1) {
+  transform: rotate(-60deg) translateX(220px) rotate(60deg);
+}
+span:nth-child(2) {
+  transform: rotate(-30deg) translateX(220px) rotate(30deg);
+}
+span:nth-child(3) {
+  transform: rotate(0deg) translateX(220px) rotate(0deg);
+}
+span:nth-child(4) {
+  transform: rotate(30deg) translateX(220px) rotate(-30deg);
+}
+span:nth-child(5) {
+  transform: rotate(60deg) translateX(220px) rotate(-60deg);
+}
+span:nth-child(6) {
+  transform: rotate(90deg) translateX(220px) rotate(-90deg);
+}
+span:nth-child(7) {
+  transform: rotate(120deg) translateX(220px) rotate(-120deg);
+}
+span:nth-child(8) {
+  transform: rotate(150deg) translateX(220px) rotate(-150deg);
+}
+span:nth-child(9) {
+  transform: rotate(180deg) translateX(220px) rotate(-180deg);
+}
+span:nth-child(10) {
+  transform: rotate(210deg) translateX(220px) rotate(-210deg);
+}
+span:nth-child(11) {
+  transform: rotate(240deg) translateX(220px) rotate(-240deg);
+}
+span:nth-child(12) {
+  transform: rotate(270deg) translateX(220px) rotate(-270deg);
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="round">
+      <span>1</span>
+      <span>2</span>
+      <span>3</span>
+      <span>4</span>
+      <span>5</span>
+      <span>6</span>
+      <span>7</span>
+      <span>8</span>
+      <span>9</span>
+      <span>10</span>
+      <span>11</span>
+      <span>12</span>
+      <div class="second">
+      </div>
+      <div class="minute">
+      </div>
+      <div class="hour">
+      </div>
+      <div class="bom">
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

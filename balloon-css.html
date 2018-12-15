@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Balloon.css</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="balloons.css/balloon.css">
+  <link rel="stylesheet" type="text/css" href="balloons.css/iconfont.css">
+</head>
+<body>
+	<div class="container">
+		<div class="top">
+		  <div class="topheader">
+		    <img src="https://kazzkiq.github.io/balloon.css/assets/img/logo.svg" alt="">
+		  </div>
+		  <div class="star">
+		  	<i class="iconfont">&#xe600;</i>Star
+		  </div>
+		  <h2 class="top-content">
+		    Simple tooltips made of pure CSS
+		  </h2>
+		  <p>
+		  	Balloon.css lets you add tooltips to elements <b>without JavaScript</b> and in just a few lines of CSS.
+		  </p>
+		  <div class="button">
+		  	<a data-balloon="https://github.com/kazzkiq/balloon.css" data-balloon-pos="up" href="#">
+		  		<span>Github Project</span>
+		  	</a>
+		  	<a data-balloon="For minified version, visit Github" data-balloon-pos="up" href="#">
+		  		<span>Download CSS</span>
+		  	</a>
+		  </div>
+		</div>
+		<div class="hero">
+			<div class="hero-one">
+				<h2>Positioning</h2>
+					<p class="one-int">
+						For positioning, use <span>data-balloon-pos</span> attribute with one of the values: <span>up</span>, <span>down</span>, <span>left</span> or <span>right</span>
+					</p>
+					<div class="example-container one">
+						<code>
+							&lt;button data-balloon="<span class>whats up!</span>" data-balloon-pos="<span class>up</span>"><span class="attr-name">Hover me!</span>&lt;/button>
+						</code>
+						<div class="example">
+							<button data-balloon="Whats up!" data-balloon-pos="up">
+							Hover me!
+						</button>
+						</div>
+					</div>
+					<div class="example-container two">
+						<code>
+							&lt;button data-balloon="<span>whats up!</span>" data-balloon-pos="<span>left</span>"><span class="attr-name">Hover me!</span>&lt;/button>
+						</code>
+						<div class="example">
+							<button data-balloon="Whats up!" data-balloon-pos="left">
+								Hover me!
+							</button>
+						</div>
+					</div>
+					<div class="example-container three">
+						<code>
+							&lt;button data-balloon="<span>whats up!</span>" data-balloon-pos="<span>right</span>"><span class="attr-name">Hover me!</span>&lt;/button>
+						</code>
+						<div class="example">
+							<button data-balloon="Whats up!" data-balloon-pos="right">
+							Hover me!
+						</button>
+						</div>
+					</div>
+					<div class="example-container four">
+						<code>
+							&lt;button data-balloon="<span>whats up!</span>" data-balloon-pos="<span>down</span>"><span class="attr-name">Hover me!</span>&lt;/button>
+						</code>
+						<div class="example">
+							<button data-balloon="Whats up!" data-balloon-pos="down">
+								Hover me!
+							</button>
+						</div>
+					</div>
+			</div>
+			<div class="hero-two">
+				<h2>Length</h2>
+				<p>By default, tooltips will always remain single-line no matter their length. You can change this behavior by using the attribute <span>data-balloon-length</span> with one of the values:<span>small</span>, <span>medium</span>, <span>large</span>	or <span>fit</span>
+				</p>
+				<div class="example-container one">
+					<code>
+						&lt;button data-balloon-length="<span>small</span>" data-balloon="<span>Hi</span>data-balloon-pos="<span class>up</span>"><span class="attr-name">I'm a small tooltip</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="Hi" data-balloon-length="small" data-balloon-pos="up">
+						I'm a small tooltip
+						</button>
+					</div>
+				</div>
+				<div class="example-container two">
+					<code>
+						&lt;button data-balloon-length="<span>medium</span>" data-balloon="<span>Now that's a super big text we have over here right? Lorem ipsum dolor sit I'm done.</span>" data-balloon-pos="<span>up</span>"><span class="attr-name">I'm a medium tooltip</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="Now that's a super big text we have over here right? Lorem ipsum dolor sit I'm done." data-balloon-length="medium" data-balloon-pos="up">
+							I'm a medium tooltip
+						</button>
+					</div>
+				</div>
+				<div class="example-container three">
+					<code>
+						&lt;button data-balloon-length="<span>large</span>" data-balloon="<span>What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!</span>"data-balloon-pos="<span>up</span>"><span class="attr-name">I'm a large tooltip</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-length="large" data-balloon-pos="up">
+							I'm a large tooltip
+						</button>
+					</div>
+				</div>
+				<div class="example-container four">
+					<code>
+						&lt;button data-balloon-length="<span>xlarge</span>"data-balloon="<span>What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!</span>" data-balloon-pos="<span>down</span>"><span class="attr-name">I'm a Xlarge tooltip</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-length="xlarge" data-balloon-pos="up">
+							I'm a Xlarge tooltip
+						</button>
+					</div>
+				</div>
+				<div class="example-container five">
+					<code>
+						&lt;button data-balloon-length="<span>fit</span>"data-balloon="<span>What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!</span>" data-balloon-pos="<span>down</span>"><span class="attr-name">My width will fit to element</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="What about something really big? This may surpass your window dimensions. Imagine you're on that boring class with that boring teacher and you didn't slept so well last night. Suddenly you're sleeping in class. Can you believe it?!" data-balloon-length="fit" data-balloon-pos="up">
+							My width will fit to element
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="hero-three">
+				<h2>Showing tooltips programatically</h2>
+				<p>If you want to show tooltips even when user interaction isn't happening, you can simply use the<span>data-balloon-visible</span> attribute:</p>
+				<div class="example-container">
+					<code>
+						&lt;button data-balloon-visible data-balloon="<span>I am always visible!</span>" data-balloon-pos="up"><span class="attr-name">Always visible!</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="I am always visible!" data-balloon-visible data-balloon-pos="up">Always visible!
+						</button>
+					</div>
+				</div>
+				<p>The attribute <span>data-balloon-visible</span> can be easily added via JavaScript (e.g.<span>.setAttribute()</span>), enabling you to show tooltips whenever needed. 
+				</p>
+			</div>
+			<div class="hero-four">
+				<h2>Glyphs and Icon Fonts</h2>
+				<p>You can also add any HTML special character to your tooltips, or even use third-party Icon fonts:</p>
+				<div class="example-container one">
+					<code>
+						&lt;button data-balloon="<span>HTML special character: &#9787; &#9787; &#9986; &#9820;</span>" data-balloon-pos="up"><span class="attr-name">Hover me!</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="HTML special character:&#9787; &#9787; &#9986; &#9820;" data-balloon-pos="up">
+							Hover me!
+						</button>
+					</div>
+				</div>
+				<div class="example-container two">
+					<code>
+						&lt;button data-balloon="<span>Emojis: 😀 😬 😁 😂 😃 😄 😅 😆</span>" data-balloon-pos="up"><span attr-name>Hover me!</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="Emojis: 😀 😬 😁 😂 😃 😄 😅 😆" data-balloon-pos="up">
+							Hover me!
+						</button>
+					</div>
+				</div>
+				<div class="example-container three">
+					<code>
+						&lt;button class="font-awesome" data-balloon="<span>Font Awesome: &#xf030; &#xf133; &#xf1fc; &#xf03e; &#xf1f8;</span>" data-balloon-pos="up"><span class="attr-name">Hover me!</span>&lt;/button>
+					</code>
+					<div class="example">
+						<button data-balloon="Font Awesome: &#xf030; &#xf133; &#xf1fc; &#xf03e; &#xf1f8;" data-balloon-pos="up">
+							Hover me!
+						</button>
+					</div>
+				</div>
+			</div>
+			<hr>
+			<div class="hero-five">
+				<h2>How to use</h2>
+				<p>Simply call <b>Balloon.css</b> to your HTML:</p>
+				<div class="example-container one">
+					<code>
+						&lt;link rel="<span>stylesheet</span>" href="<span>path/to/balloon.css</span>">
+					</code>
+				</div>
+				<p>Alternatively, you can use it via CDN (provided by cdnjs):</p>
+				<div class="example-container two">
+					<code>
+						&lt;link rel="<span>stylesheet</span>" href="<span>https://cdnjs.cloudflare.com/ajax/libs/balloon-css/0.5.0/balloon.min.css</span>">
+					</code>
+				</div>
+				<p>And add the attributes <span>data-balloon</span> and <span>data-balloon-pos</span> to your HTML elements:</p>
+				<div class="example-container three">
+					<code>
+						&lt;span data-balloon="<span>I'm a tooltip.</span>" data-balloon-pos="<span>up</span>">Blablabla&lt;/span>
+					</code>
+				</div>
+			</div>
+			<hr>
+			<div class="hero-six">
+				<h2>Drawbacks</h2>
+				<p>Balloon.css make use of pseudo-elements thus self-closing elements such as <b>&lt;img></b>, <b>&lt;input></b> and <b>&lt;hr></b> will not render tooltips.</p>
+				<p>Also keep in mind that if pseudo elements are already in use on an element, the tooltip will conflict with them resulting in potential bugs.</p>
+		</div>	
+	</div>
+</div>
+	<div class="footer">
+    Made by Claudio Holanda (<a href="#">@kazzkiq</a>)
+	</div>
+</body>
+</html>

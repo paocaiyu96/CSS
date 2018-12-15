@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>CSS-3D</title>
+  <style>
+  	body {
+		background: url(slider/stucco.png);
+		}
+	div {
+		height: 300px;
+		width: 300px;
+	}
+
+	.top {
+		background-blend-mode: screen;
+		background-image: linear-gradient(45deg, yellow,red), linear-gradient(-45deg, green, magenta);
+		transform: translateY(150px) rotateX(90deg);
+	}
+	.bottom {
+		background-image: linear-gradient( green,red);
+		transform: translateY(-150px) rotateX(90deg);
+	}
+	.front {
+		background-image: linear-gradient(45deg, yellow, green);
+		transform: translateZ(150px)
+	}
+	.behind {
+		background-image: linear-gradient(66deg,yellow,red, blue),linear-gradient(221deg,green, magenta);
+		transform: translateZ(-150px);
+	}
+	.right {
+		background-image: linear-gradient(45deg,blue,yellow);
+		transform: rotateY(90deg) translateZ(-150px);
+	}
+	.left {
+	background-image: linear-gradient(45deg, green,magenta);
+		transform: rotateY(90deg) translateZ(150px);
+	}
+	@keyframes spin {
+	  from {
+	  transform: perspective(1000px) rotateX(30deg) rotateZ(30deg);
+	}
+		to {
+	transform: perspective(1000px) rotateX(1360deg) rotateZ(2360deg);
+	}
+	}
+	section {
+	  position: absolute;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    top: 0px;
+    margin: auto;
+    height: 300px;
+    width: 300px;
+    perspective-origin: 50% 50%;
+    transform-style: preserve-3d;
+    animation: spin 20s linear infinite;
+    animation-play-state: paused;
+    cursor: pointer;
+	}
+	section:hover {
+		animation-play-state: running;
+	}
+
+	div {
+		background-blend-mode: screen;
+		position: absolute;
+	}
+
+  </style>
+</head>
+<body>
+	<section>
+		<div class="top"></div>
+		<div class="bottom"></div>
+		<div class="left"></div>
+		<div class="right"></div>
+		<div class="front"></div>
+		<div class="behind"></div>
+	</section>
+</body>
+</html>
